@@ -9,7 +9,7 @@ close all;
 
 %% Inputs
 if ~exist('info','var') || isempty(info)
-  info = tumi.info();
+  info = fse.info();
 end
 if ~exist('n_skip','var') || isempty(n_skip)
   n_skip = 5;
@@ -41,7 +41,7 @@ if do_bbox
       hold on; rectangle('position',info.object.bbox(k,:),'EdgeColor',[0 1 0],'LineWidth',2); hold off;
       hold on; text(info.object.bbox(k,1)+5,info.object.bbox(k,2)+12,sprintf('%s-%d',info.class.name{info.object.classidx(k)}, info.object.instanceidx(k)),'BackgroundColor',[1 1 1]); hold off;
       if is_verbose
-        fprintf('[tumi.%s]: Video=''%s'', Object=''%s'', Instance=%d\n', mfilename, info.video.name{k_video}, info.class.name{info.object.classidx(k)}, info.object.instanceidx(k));
+        fprintf('[fse.%s]: Video=''%s'', Object=''%s'', Instance=%d\n', mfilename, info.video.name{k_video}, info.class.name{info.object.classidx(k)}, info.object.instanceidx(k));
       end
     end
   end

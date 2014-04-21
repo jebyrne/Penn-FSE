@@ -8,7 +8,7 @@ function [info] = info(xlsname)
 
 %% Inputs
 if ~exist('xlsname','var')
-  xlsname = which('TUMI.xlsx');
+  xlsname = which('PENN-FSE.xlsx');
   indir = fileparts(xlsname);  % run set_paths()
 else
   indir = fileparts(xlsname);

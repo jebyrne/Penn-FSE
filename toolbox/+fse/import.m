@@ -2,7 +2,6 @@ function [imroi] = import(k_video, k_class, k_instance, k_usage, n_skip, info)
 %--------------------------------------------------------------------------
 %
 % Copyright (c) 2012 Jeffrey Byrne
-% $Id: demo_hough.m 79 2012-07-27 14:30:30Z jebyrne $
 %
 %--------------------------------------------------------------------------
 close all;
@@ -10,7 +9,7 @@ close all;
 
 %% Inputs
 if ~exist('info','var') || isempty(info)
-  info = tumi.info();
+  info = fse.info();
 end
 if ~exist('n_skip','var') || isempty(n_skip)
  n_skip = 1;

@@ -1,15 +1,15 @@
 Jeffrey Byrne <jebyrne@cis.upenn.edu>
 University of Pennsylvania
 
-The Terrestrial Urban Motion Imagery (TUMI) dataset contains 24 annotated videos 
+The Penn Functional Scene Element Dataset (Penn-FSE) contains 24 annotated videos 
 of functional scene elements in use in downtown Philadelphia.  
 
 1.0 MATLAB QUICKSTART
 
->> cd $TUMI/toolbox
+>> cd $FSE/toolbox
 >> addpath(genpath(pwd))
 >> set_paths
->> tumi.show
+>> fse.show
 
 2.0 MATLAB USAGE
 
@@ -17,7 +17,7 @@ An example script that shows how to import this dataset as a training/testing se
 
 <MATLAB>
 %% Import
-info = tumi.info();  
+info = fse.info();  
 
 %% Objects
 k_classes = setdiff(1:length(info.class.name),3);  % minus bus stop

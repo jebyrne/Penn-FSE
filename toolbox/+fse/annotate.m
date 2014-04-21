@@ -2,12 +2,11 @@ function [] = annotate()
 %--------------------------------------------------------------------------
 %
 % Copyright (c) 2012 Jeffrey Byrne
-% $Id: demo_hough.m 79 2012-07-27 14:30:30Z jebyrne $
 %
 %--------------------------------------------------------------------------
 
 %% Import
-info = tumi.info();
+info = fse.info();
 
 
 %% Annotation
@@ -15,10 +14,10 @@ for k=1:length(info.object.instanceidx)
   if info.object.do_annotation(k) == 1
     if (info.object.usageidx(k) == 0)
       k_video = info.object.videoidx(k);
-      fprintf('[tumi.%s]: Video=''%s'', Object=''%s'', Instance=%d\n', mfilename, info.video.name{k_video}, info.class.name{info.object.classidx(k)}, info.object.instanceidx(k));
-      tumi.show(k_video, [], [], [], info, true, false, 0, false);
+      fprintf('[fse.%s]: Video=''%s'', Object=''%s'', Instance=%d\n', mfilename, info.video.name{k_video}, info.class.name{info.object.classidx(k)}, info.object.instanceidx(k));
+      fse.show(k_video, [], [], [], info, true, false, 0, false);
       info.object.bbox(k,:) = getrect();
-      tumi.show(k_video, [], [], [], info, true, false, 0, false);
+      fse.show(k_video, [], [], [], info, true, false, 0, false);
       
       % Write me (all usages)
       j_usage = find(info.object.videoidx==k_video & info.object.classidx==info.object.classidx(k) & info.object.instanceidx==info.object.instanceidx(k));
@@ -53,7 +52,7 @@ for k=1:length(info.object.instanceidx)
       
       % Exit?
       if GUI.is_exit
-        fprintf('[tumi.%s]: exiting annotation\n', mfilename);
+        fprintf('[fse.%s]: exiting annotation\n', mfilename);
         return;
       end
       
